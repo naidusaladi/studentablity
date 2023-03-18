@@ -217,7 +217,7 @@ health=st.number_input("Current Health Status", min_value=1, max_value=5)
 
 #------absent---------
 
-absences=age=st.number_input("No.of School Absences",min_value=1, max_value=5)
+absences=st.number_input("No.of School Absences",min_value=1, max_value=5)
 
 dec=pickle.load(open("decision.sav",'rb'))
 svm=pickle.load(open("svm.sav",'rb'))
