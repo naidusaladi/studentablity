@@ -36,7 +36,7 @@ Sex = st.selectbox(
     'Sex',
     ('Female', 'Male'))
 
-st.write('You selected:', Sex)
+
 
 
 #-------------------------- age (15-22)-----------------------------
@@ -50,14 +50,14 @@ Address = st.selectbox(
     'Address',
     ('Urban', 'Rural'))
 
-st.write('You selected:', Address)
+
 
 Family_Size = st.selectbox(
     
     'Family Size',
     ('<=3', '>3'))
 
-st.write('You selected:', Family_Size)
+
 
 Pstatus = st.selectbox(
     
@@ -71,14 +71,14 @@ Medu = st.selectbox(
     "Mother's Education",
     ('None', 'Primary(upto 4th)','Highschool(5th to 9th)','10+2','Higher Education'))
 
-st.write('You selected:', Medu)
+
 
 Fedu = st.selectbox(
     
     "Father's Education",
     ('None', 'Primary(upto 4th)','Highschool(5th to 9th)','10+2','Higher Education'))
 
-st.write('You selected:', Fedu)
+
 
 
 Mjob = st.selectbox(
@@ -86,21 +86,21 @@ Mjob = st.selectbox(
     'Mother Job',
     ('Teacher', 'Health care realated','Civil Services','Other'))
 
-st.write('You selected:', Mjob)
+
 
 Fjob = st.selectbox(
     
     'Mother Job',
     ('Teacher', 'Health care realated','Civil Services','At_Home','Other'))
 
-st.write('You selected:', Fjob)
+
 
 reson = st.selectbox(
     
     'Reson to Choose this School',
     ('Close to Home', 'School Reputation','Course preference','At_Home','Other'))
 
-st.write('You selected:', reson)
+
 
 
 guardian  = st.selectbox(
@@ -108,7 +108,7 @@ guardian  = st.selectbox(
     "Student's Guardian",
     ('Mother','Father','Other'))
 
-st.write('You selected:', guardian)
+
 
 
 traveltime  = st.selectbox(
@@ -116,7 +116,7 @@ traveltime  = st.selectbox(
     "Travel time(from home to school)",
     ('<15min','15-30min','30-60min','>60min'))
 
-st.write('You selected:',traveltime)
+
 
 
 studytime  = st.selectbox(
@@ -124,7 +124,7 @@ studytime  = st.selectbox(
     "Weekly Study Time",
     ('<2hrs','2-5hrs','5-10hrs','>10hrs'))
 
-st.write('You selected:', studytime)
+
 
 
 failures  = st.selectbox(
@@ -132,7 +132,7 @@ failures  = st.selectbox(
     "No.of past class failures",
     ('0','1','2','3','more'))
 
-st.write('You selected:', failures)
+
 
 
 schoolsup  = st.selectbox(
@@ -140,7 +140,7 @@ schoolsup  = st.selectbox(
     "Extra Educational Support",
     ('True','False'))
 
-st.write('You selected:',schoolsup)
+
 
 
 famsup = st.selectbox(
@@ -148,14 +148,14 @@ famsup = st.selectbox(
     "Family Educational Support",
     ('True','False'))
 
-st.write('You selected:', famsup)
+
 
 paid  = st.selectbox(
     
     "Extra Paid Classes Within The Course Subject ",
     ('True','False'))
 
-st.write('You selected:', paid)
+
 
 
 activities = st.selectbox(
@@ -163,7 +163,7 @@ activities = st.selectbox(
     "Extra-Curricular Activities ",
     ('True','False'))
 
-st.write('You selected:',activities)
+
 
 
 nursery = st.selectbox(
@@ -171,21 +171,21 @@ nursery = st.selectbox(
     "Attended Nursery School",
     ('True','False'))
 
-st.write('You selected:',nursery)
+
 
 higher= st.selectbox(
     
     "Wants To Take Higher Education",
     ('True','False'))
 
-st.write('You selected:',higher)
+
 
 internet = st.selectbox(
     
     "Internet Access At Home ",
     ('True','False'))
 
-st.write('You selected:',internet)
+
 
 romantic = st.selectbox(
     
@@ -229,14 +229,14 @@ if st.button('Predict'):
             ,dic10[guardian],dic11[traveltime],dic12[studytime],dic13[failures],dic14[schoolsup],dic14[famsup],dic14[paid],dic14[activities],
             dic14[nursery],dic14[higher],dic14[internet],dic14[romantic],famrel,freetime,goout,dalc,walc,health,absences]
     st.write(len(values))
-    print(len(values))
+   
     pred1=dec.predict([values])
     pred2=svm.predict([values])
     pred3=random.predict([values])
     pred4=logistic.predict([values])
     pred5=knn.predict([values])
-    st.write(pred1[0],pred2[0],pred3[0],pred4[0],pred5[0])
-    print(pred1[0],pred2,pred3,pred4,pred5)
+    if(st.success):st.write(pred1[0],pred2[0],pred3[0],pred4[0],pred5[0])
+    
 else:
     st.write('click above for prediction')
 
