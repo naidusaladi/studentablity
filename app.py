@@ -222,7 +222,7 @@ absences=st.number_input("No.of School Absences",min_value=1, max_value=5)
 Algo = st.selectbox(
     
     "Select Algorithms ",
-    ('Decision Trees','Support Vector Machie','Randomforest','Logistic Regression','KNN'))
+    ('Decision Trees','Support Vector Machie','Randomforest','KNN'))
 
 dic_algo={'Decision Trees':0,'Support Vector Machie':1,'Randomforest':2,'KNN':3}
 counter=dic_algo[Algo]
