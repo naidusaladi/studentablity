@@ -90,7 +90,7 @@ Mjob = st.selectbox(
 
 Fjob = st.selectbox(
     
-    'Mother Job',
+    'Father Job',
     ('Teacher', 'Health care realated','Civil Services','At Home','Other'))
 
 
