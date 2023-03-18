@@ -219,11 +219,11 @@ health=st.number_input("Current Health Status", min_value=1, max_value=5)
 
 absences=age=st.number_input("No.of School Absences",min_value=1, max_value=5)
 
-dec=pickle.load(open("C:\\Users\\DELL\\Desktop\\stdcpy\\decision.sav",'rb'))
-svm=pickle.load(open("C:\\Users\\DELL\\Desktop\\stdcpy\\svm.sav",'rb'))
-random=pickle.load(open("C:\\Users\\DELL\\Desktop\\stdcpy\\random.sav",'rb'))
-logistic=pickle.load(open("C:\\Users\\DELL\\Desktop\\stdcpy\\logisticreg.sav",'rb'))
-knn=pickle.load(open("C:\\Users\\DELL\\Desktop\\stdcpy\\knn.sav",'rb'))
+dec=pickle.load(open("decision.sav",'rb'))
+svm=pickle.load(open("svm.sav",'rb'))
+random=pickle.load(open("random.sav",'rb'))
+logistic=pickle.load(open("logisticreg.sav",'rb'))
+knn=pickle.load(open("knn.sav",'rb'))
 if st.button('Predict'):
     values=[dic1[School],dic3[Sex],age,dic4[Address],dic5[Family_Size],dic6[Pstatus],dic7[Medu],dic7[Fedu],dic8[Mjob],dic8[Fjob],dic9[reson]
             ,dic10[guardian],dic11[traveltime],dic12[studytime],dic13[failures],dic14[schoolsup],dic14[famsup],dic14[paid],dic14[activities],
