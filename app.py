@@ -238,7 +238,7 @@ if st.button('Predict'):
     st.write("Decisointree:"+str(pred1[0]))
     st.write("Support Vector Machine:"+str(pred2[0]))
     st.write("Random Forest:"+str(pred3[0]))
-    st.write("Logistic Regression"+str(pred4[0]))
+    st.write("Logistic Regression:"+str(pred4[0]))
     st.write("KNN:"+str(pred5[0]))
     
 else:
