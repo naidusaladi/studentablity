@@ -219,6 +219,13 @@ health=st.number_input("Current Health Status", min_value=1, max_value=5)
 
 absences=st.number_input("No.of School Absences",min_value=1, max_value=5)
 
+Algo = st.selectbox(
+    
+    "Select Algorithms ",
+    ('Decision Trees','Support Vector Machie','Randomforest','Logistic Regression','KNN'))
+
+dic_algo={'Decision Trees':0,'Support Vector Machie':1,'Randomforest':2,'KNN':3}
+counter=dic_algo[Algo]
 dec=pickle.load(open("decision.sav",'rb'))
 svm=pickle.load(open("svm.sav",'rb'))
 random=pickle.load(open("random.sav",'rb'))
@@ -235,11 +242,14 @@ if st.button('Predict'):
     pred3=random.predict([values])
     pred4=logistic.predict([values])
     pred5=knn.predict([values])
-    st.write("Decisointree:"+str(pred1[0]))
-    st.write("Support Vector Machine:"+str(pred2[0]))
-    st.write("Random Forest:"+str(pred3[0]))
-    st.write("Logistic Regression:"+str(pred4[0]))
-    st.write("KNN:"+str(pred5[0]))
+    if counter==0:
+        st.write("Decisointree:"+str(pred1[0]))
+    if counter==1:
+        st.write("Support Vector Machine:"+str(pred2[0]))
+    if counter==2:
+        st.write("Random Forest:"+str(pred3[0]))
+    if counter==3:
+        st.write("KNN:"+str(pred5[0]))
     
 else:
     st.write('click above for prediction')
