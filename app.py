@@ -228,14 +228,18 @@ if st.button('Predict'):
     values=[dic1[School],dic3[Sex],age,dic4[Address],dic5[Family_Size],dic6[Pstatus],dic7[Medu],dic7[Fedu],dic8[Mjob],dic8[Fjob],dic9[reson]
             ,dic10[guardian],dic11[traveltime],dic12[studytime],dic13[failures],dic14[schoolsup],dic14[famsup],dic14[paid],dic14[activities],
             dic14[nursery],dic14[higher],dic14[internet],dic14[romantic],famrel,freetime,goout,dalc,walc,health,absences]
-    st.write(len(values))
+    
    
     pred1=dec.predict([values])
     pred2=svm.predict([values])
     pred3=random.predict([values])
     pred4=logistic.predict([values])
     pred5=knn.predict([values])
-    if(st.success):st.write(pred1[0],pred2[0],pred3[0],pred4[0],pred5[0])
+    st.write("decisointree:"+str(pred1[0]))
+    st.write("decisointree:"+str(pred2[0]))
+    st.write("decisointree:"+str(pred3[0]))
+    st.write("decisointree:"+str(pred4[0]))
+    st.write("decisointree:"+str(pred5[0]))
     
 else:
     st.write('click above for prediction')
