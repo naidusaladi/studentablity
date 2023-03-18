@@ -4,17 +4,17 @@ import pickle
 
 
 dic1={'Gabriel Pereira':0, 'Mousinho da Silveria':1}
-#dic2={'Mathmatics':0, 'Portuguese Language':1}
+
 dic3={'Female':0, 'Male':1}
 dic4={'Urban':1,'Rural':0}
 dic5={'<=3':1,'>3':0}
 dic6={'Living Together':1, 'Apart':0}
 dic7={'None':0, 'Primary(upto 4th)':1,'High School(5th to 9th)':2,"10+2":3,'Higher Education':4}
-dic8={'Teacher':3, 'Health care realated':1,'Civil Services':0,'Other':2}
-dic9={'Close to Home':1, 'School Reputation':4,'Course preference':2,'At_Home':0,'Other':3}
+dic8={'Teacher':0, 'Health care realated':1,'Civil Services':2,'Other':3,'At Home':4}
+dic9={'School Reputation':3,'Course preference':0,'Close to Home':4,'Other':2}
 dic10={'Mother':1,'Father':0,'Other':2}
-dic11={'<15min':2,'15-30min':0,'30-60min':1,'>60min':3}
-dic12={'<2hrs':2,'2-5hrs':0,'5-10hrs':1,'>10hrs':3}
+dic11={'<15min':1,'15-30min':2,'30-60min':3,'>60min':4}
+dic12={'<2hrs':1,'2-5hrs':2,'5-10hrs':3,'>10hrs':4}
 dic13={'0':0,'1':1,'2':2,'3':3,'more':4}
 dic14={'True':1,'False':0}
 
@@ -84,21 +84,21 @@ Fedu = st.selectbox(
 Mjob = st.selectbox(
     
     'Mother Job',
-    ('Teacher', 'Health care realated','Civil Services','Other'))
+    ('Teacher', 'Health care realated','Civil Services','Other','At Home'))
 
 
 
 Fjob = st.selectbox(
     
     'Mother Job',
-    ('Teacher', 'Health care realated','Civil Services','At_Home','Other'))
+    ('Teacher', 'Health care realated','Civil Services','At Home','Other'))
 
 
 
 reson = st.selectbox(
     
     'Reson to Choose this School',
-    ('Close to Home', 'School Reputation','Course preference','At_Home','Other'))
+    ( 'School Reputation','Course preference','Close to Home','Other'))
 
 
 
@@ -217,7 +217,7 @@ health=st.number_input("Current Health Status", min_value=1, max_value=5)
 
 #------absent---------
 
-absences=st.number_input("No.of School Absences",min_value=1, max_value=5)
+absences=st.number_input("No.of School Absences",min_value=0, max_value=32)
 
 Algo = st.selectbox(
     
@@ -226,10 +226,9 @@ Algo = st.selectbox(
 
 dic_algo={'Decision Trees':0,'Support Vector Machie':1,'Randomforest':2,'KNN':3}
 counter=dic_algo[Algo]
-dec=pickle.load(open("decision.sav",'rb'))
+dec=pickle.load(open("decisiontree.sav",'rb'))
 svm=pickle.load(open("svm.sav",'rb'))
-random=pickle.load(open("random.sav",'rb'))
-logistic=pickle.load(open("logisticreg.sav",'rb'))
+random=pickle.load(open("randomforest.sav",'rb'))
 knn=pickle.load(open("knn.sav",'rb'))
 if st.button('Predict'):
     values=[dic1[School],dic3[Sex],age,dic4[Address],dic5[Family_Size],dic6[Pstatus],dic7[Medu],dic7[Fedu],dic8[Mjob],dic8[Fjob],dic9[reson]
@@ -240,7 +239,7 @@ if st.button('Predict'):
     pred1=dec.predict([values])
     pred2=svm.predict([values])
     pred3=random.predict([values])
-    pred4=logistic.predict([values])
+
     pred5=knn.predict([values])
     if counter==0:
         st.write("Decisointree:"+str(pred1[0]))
