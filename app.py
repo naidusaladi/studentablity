@@ -235,11 +235,11 @@ if st.button('Predict'):
     pred3=random.predict([values])
     pred4=logistic.predict([values])
     pred5=knn.predict([values])
-    st.write("decisointree:"+str(pred1[0]))
-    st.write("decisointree:"+str(pred2[0]))
-    st.write("decisointree:"+str(pred3[0]))
-    st.write("decisointree:"+str(pred4[0]))
-    st.write("decisointree:"+str(pred5[0]))
+    st.write("Decisointree:"+str(pred1[0]))
+    st.write("Support Vector Machine:"+str(pred2[0]))
+    st.write("Random Forest:"+str(pred3[0]))
+    st.write("Logistic Regression"+str(pred4[0]))
+    st.write("KNN:"+str(pred5[0]))
     
 else:
     st.write('click above for prediction')
